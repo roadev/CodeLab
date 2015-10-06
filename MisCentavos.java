@@ -16,7 +16,6 @@ public class MisCentavos {
     JOptionPane.showMessageDialog(null, "**Banco Mis Centavos** \n Valor consignado      Valor futuro en 2 años \n " + vp + "      " + vf);
   }
 
-
   public static void main(String[] args){
     MisCentavos app = new MisCentavos();
     app.get();
