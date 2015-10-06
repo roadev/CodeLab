@@ -2,12 +2,12 @@ import javax.swing.JOptionPane;
 
 public class Fruteria{
 
-  public void get(){
+  public void getFruteria(){
     double mass = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese la masa de las manzanas: "));
-    this.calc(mass);
+    this.calcFruteria(mass);
   }
 
-  public void calc(double mass){
+  public void calcFruteria(double mass){
     double pF = 0;
     double pB = mass * 3600;
 
@@ -24,12 +24,12 @@ public class Fruteria{
       pF = pB * 1.2;
     }
 
-    JOptionPane.showMessageDialog(null, "**Frutería** \n  Para " + mass + " Kg de manzanas " + "\n El valor con descuento es: "+ pF);
+    JOptionPane.showMessageDialog(null, "**Frutería** \n Para " + mass + " Kg de manzanas " + "\n El valor con descuento es: "+ pF);
   }
 
   public static void main(String[] args){
     Fruteria app = new Fruteria();
-    app.get();
+    app.getFruteria();
     //app.calc();
   }
 
