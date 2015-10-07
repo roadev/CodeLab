@@ -8,6 +8,7 @@ public class Party{
   String[] menNames = new String[10];
   String[] womenNames = new String[10];
   int i = 0;
+
   public void calc(){
     n = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de invitados: "));
     men = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de hombres: "));
@@ -31,10 +32,16 @@ public class Party{
     for(int j=0; j <= women; j++){
       promWomen += womenAge[j];
     }
+    int menor = arreglo[0];
+    for(int j=0; j <= men; i++){
+      if(menAge[i] < menor){
+        menor = arreglo[i];
+      }
+    }
     promMen = promMen/men;
     promWomen = promWomen/women;
     JOptionPane.showMessageDialog(null, "Promedio de Edad de las mujeres: " + promWomen +"\n"+ "Promedio de Edad de los hombres: "+ promMen +
-    "");
+    "Menor: "+ menor);
 
   }
     public static void main(String[] args) {
