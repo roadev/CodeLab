@@ -1,5 +1,14 @@
+/*
+* Este programa recibe el valor de masa de un producto y basado en un precio por Kg,
+* calcula, si aplica, el precio final con descuento.
+*/
 import javax.swing.JOptionPane;
-
+/**
+*
+* @authors Juan Roa, Fabian Santacruz, Victor Uzurriaga
+* @version 0.1
+* @since 2015-10-01
+*/
 public class Fruteria{
 
   public void getFruteria(){

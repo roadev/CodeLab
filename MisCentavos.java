@@ -22,6 +22,10 @@ public class MisCentavos {
   * Método que recibe el valor de vp ingresado en la función anterior y calcula el valor futuro, además, lo imprime en un JOptionPane
   */
   public void calc(double vp){
+    /**
+    * @vf es un real que almacena el valor futuro calculado.
+    * @vp es el valor presente y se utuiliza para realizar el cálculo de valor futuro
+    */
     double vf = vp * (Math.pow((1 + 0.098),24));
     JOptionPane.showMessageDialog(null, "**Banco Mis Centavos** \n Valor consignado      Valor futuro en 2 años \n " + vp + "      " + vf);
   }
