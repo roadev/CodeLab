@@ -25,14 +25,14 @@ public class PartyDos {
 	char option;
 
 	/**
-  * Éste método hace las operaciones y recibe los datos de las variables sexo, edadesF, edadesM y la opción del menú.
+	* Éste método hace las operaciones y recibe los datos de las variables sexo, edadesF, edadesM y la opción del menú.
 	* También imprime el resultado final
-  */
+	*/
 	public void calc(){
 		do{
 			/**
-	    * Menú 1
-	    */
+			* Menú 1
+			*/
 			sexo = Integer.parseInt(JOptionPane.showInputDialog(null, "Seleccione el sexo del invitado "+"\n"+"1. Masculino"+"\n"+"2. Femenino"));
 			if (sexo == 1){
 				edadesM = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad el invitado: "));
@@ -46,16 +46,16 @@ public class PartyDos {
 				f++;
 			}
 			/**
-	    * Aquí se define y almacena el menor valor de las edades en general
-	    */
+			* Aquí se define y almacena el menor valor de las edades en general
+			*/
 			if (edadesM < edadesF){
 				menor = edadesM;
 			}else if(edadesF < edadesM){
 				menor = edadesF;
 			}
 			/**
-	    *   Menú principal
-	    */
+			*   Menú principal
+			*/
 			option = (JOptionPane.showInputDialog(null, "¿Desea ingresar otro invitado?"+"\n"+"Digite S para continuar")).charAt(0);
 		}while((option == 's')||(option == 'S'));
 
@@ -68,8 +68,8 @@ public class PartyDos {
 
 	public static void main(String[] args){
 		/**
-    * Se crea un objeto llamado app y se llama el método calc()
-    */
+		* Se crea un objeto llamado app y se llama el método calc()
+		*/
 		PartyDos app = new PartyDos();
 		app.calc();
 	}
