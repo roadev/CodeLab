@@ -1,52 +1,41 @@
 import javax.swing.JOptionPane;
-public class Party{
-  int men, women, n;
-  double promMen = 0, promWomen = 0;
-  int[] menAge = new int[10];
-  int[] womenAge = new int[10];
-  char option;
-  String[] menNames = new String[10];
-  String[] womenNames = new String[10];
-  int i = 0;
+public class PartyDos {
+	int sexo, m=0, f=0, n, menorM, menorF, menor;
+	double promF, promM;
+	int edadesM, edadesF, contEdadesM, contEdadesF;
+	char option;
+	public void calc(){
 
-  public void calc(){
-    n = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de invitados: "));
-    men = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de hombres: "));
-    women = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de mujeres: "));
-
-    do{
-      menNames[i] = JOptionPane.showInputDialog(null, "Ingrese el nombre de el asistente"+(i+1)+": ");
-      menAge[i] = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad del asistente "+(i+1)+": "));
-      i++;
-    }while(i == (men-1));
-
-    do{
-      womenNames[i] = JOptionPane.showInputDialog(null, "Ingrese el nombre de la asistente"+(i+1)+": ");
-      womenAge[i] = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad del asistente"+(i+1)+": "));
-      i++;
-    }while(i == (women-1));
-
-    for(int j=0; j <= men; j++){
-      promMen += menAge[j];
-    }
-    for(int j=0; j <= women; j++){
-      promWomen += womenAge[j];
-    }
-    int menor = arreglo[0];
-    for(int j=0; j <= men; i++){
-      if(menAge[i] < menor){
-        menor = arreglo[i];
-      }
-    }
-    promMen = promMen/men;
-    promWomen = promWomen/women;
-    JOptionPane.showMessageDialog(null, "Promedio de Edad de las mujeres: " + promWomen +"\n"+ "Promedio de Edad de los hombres: "+ promMen +
-    "Menor: "+ menor);
-
-  }
-    public static void main(String[] args) {
-      Party app = new Party();
-      app.calc();
-    }
-
+			do{			
+				sexo = Integer.parseInt(JOptionPane.showInputDialog(null, "Seleccione el sexo del invitado "+"\n"+"1. Masculino"+"\n"+"2. Femenino"));
+				if (sexo == 1){
+					edadesM = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad el invitado: "));
+					contEdadesM = edadesM + contEdadesM;
+					
+					m++;
+					
+				}else if(sexo == 2){
+					edadesF = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad la invitada: "));
+					contEdadesF = edadesF + contEdadesF;
+					f++;
+				}
+				if (edadesM < edadesF){
+					menor = edadesM;
+				}else if(edadesF < edadesM){
+					menor = edadesF;
+				}
+				option = (JOptionPane.showInputDialog(null, "¿Desea ingresar otro invitado?"+"\n"+"Digite S para continuar")).charAt(0);
+			}while((option == 's')||(option == 'S'));
+	
+		n = m+f;
+		promF = (contEdadesF)/f;
+		promM = contEdadesM/m;
+		JOptionPane.showMessageDialog(null, "Total de invitados: " + n + "\n"+ "Total de hombres: " + m + "\n"+"Total de Mujeres: "+f+
+				"\n"+"Promedio de edad de mujeres: "+promF+"\n"+"Promedio de edad de Hombres: "+promM + "\n" + "La persona con menor edad tiene: " + menor);
+	}
+	
+	public static void main(String[] args){
+		PartyDos app = new PartyDos();
+		app.calc();
+	}
 }
