@@ -10,13 +10,20 @@ import javax.swing.JOptionPane;
 * @since 2015-10-01
 */
 public class Fruteria{
-
+  /**
+  * Este método get recibe la masa del producto, y la pasa por el método calcFruteria();
+  */
   public void getFruteria(){
     double mass = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese la masa de las manzanas: "));
     this.calcFruteria(mass);
   }
 
   public void calcFruteria(double mass){
+    /**
+    * @pF es un real inicializado en cero, será el precio final con descuento
+    * @pB es el precio base, el cuál toma el valor de la masa y lo multiplica por la constante 3600.
+    * @mass es el valor de la masa, recibido en el método getFruteria() y pasado a través de calcFruteria()
+    */
     double pF = 0;
     double pB = mass * 3600;
 
@@ -32,47 +39,18 @@ public class Fruteria{
     if (mass >= 10.01){
       pF = pB * 1.2;
     }
-
+    /**
+    * Aquí se imprime el resultado del proceso en un cuadro de diálogo
+    */
     JOptionPane.showMessageDialog(null, "**Frutería** \n Para " + mass + " Kg de manzanas " + "\n El valor con descuento es: "+ pF);
   }
 
   public static void main(String[] args){
     Fruteria app = new Fruteria();
+    /**
+    * Se crea un objeto llamado app y se llama el método getFruteria()
+    */
     app.getFruteria();
-    //app.calc();
   }
-
-  // int k = 3600;
-  //
-  // public double getMass(){
-  //   double mass = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la masa de las manzanas: "));
-  //   return mass;
-  // }
-  //
-  // public void setMass(double mass){
-  //   double pB = mass * k;
-  // }
-  //
-  // public double getDescuento(){
-  //   double descuento = pB / 1.1;
-  //   return descuento;
-  // }
-  //
-  // public void setDescuento(double descuento){
-  //
-  // }
-  //
-  //
-  // public void show(double pF){
-  //   JOptionPane.showMessageDialog(null, "*Frutería Apple** \n " + getMass() + );
-  // }
-  //
-  //
-  //
-  // public static void main(String[] args){
-  //   MisCentavos app = new MisCentavos();
-  //   app.get();
-  //   // app.calc();
-  // }
 
 }
